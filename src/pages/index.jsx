@@ -24,7 +24,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___datePublished], order: DESC }
     ) {
       edges {
         node {
@@ -35,9 +35,8 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
-            tags
-            cover
-            date
+            datePublished
+            description
           }
         }
       }

@@ -10,8 +10,8 @@ class PostListing extends React.Component {
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
-        date: postEdge.node.frontmatter.date,
-        excerpt: postEdge.node.excerpt,
+        date: postEdge.node.frontmatter.datePublished,
+        description: postEdge.node.frontmatter.description,
         timeToRead: postEdge.node.timeToRead
       });
     });
@@ -23,9 +23,12 @@ class PostListing extends React.Component {
       <div>
         {/* Your post list here. */
         postList.map(post => (
-          <Link to={post.path} key={post.title}>
-            <h1>{post.title}</h1>
-          </Link>
+          <div>
+            <Link to={post.path} key={post.title}>
+              <h1>{post.title}</h1>
+            </Link>
+            <p>{post.description}</p>
+          </div>
         ))}
       </div>
     );

@@ -50,10 +50,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        cover
-        date
-        category
-        tags
+        datePublished
       }
       fields {
         slug
