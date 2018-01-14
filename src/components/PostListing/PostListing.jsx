@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from 'rmwc/Button';
 import Link from "gatsby-link";
 
 class PostListing extends React.Component {
@@ -27,6 +28,7 @@ class PostListing extends React.Component {
             <Link to={post.path} key={post.title}>
               <h1>{post.title}</h1>
             </Link>
+            <Button>Easy</Button>
             <p>{post.description}</p>
           </div>
         ))}

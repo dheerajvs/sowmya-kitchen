@@ -1,4 +1,5 @@
 const config = require("./data/SiteConfig");
+const path = require("path");
 
 const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
@@ -153,6 +154,12 @@ module.exports = {
             output: config.siteRss
           }
         ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        includePaths: [path.resolve(__dirname, './node_modules')]
       }
     }
   ]
